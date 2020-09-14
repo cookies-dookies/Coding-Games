@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+class Solution {
+
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int N = in.nextInt();
+        int min = Integer.MAX_VALUE;
+        ArrayList<Integer> diffs = new ArrayList<Integer>();
+        ArrayList<Integer> Ps = new ArrayList<Integer>();
+        int P[] = new int[N];
+        for (int i = 0; i < N; i++) {
+            Ps.add(in.nextInt());
+        }
+        Collections.sort(Ps);
+
+        for (int i = 0; i < N-1; i++) {
+            int diff = Ps.get(i+1)-Ps.get(i);
+            if(min >= diff) min = Math.abs(diff);
+            }
+        
+        if(min!=Integer.MAX_VALUE) System.out.println(min);
+    }
+}
